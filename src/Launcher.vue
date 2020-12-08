@@ -15,6 +15,7 @@
       <img v-else class="sc-open-icon" :src="icons.open.img" :alt="icons.open.name" />
     </div>
     <ChatWindow
+      :hide-user-input-on-suggestions="hideUserInputOnSuggestions"
       :message-list="messageList"
       :on-user-input-submit="onMessageWasSent"
       :participants="participants"
@@ -218,6 +219,10 @@ export default {
       }
     },
     alwaysScrollToBottom: {
+      type: Boolean,
+      default: () => false
+    },
+    hideUserInputOnSuggestions: {
       type: Boolean,
       default: () => false
     },
