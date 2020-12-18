@@ -23,7 +23,7 @@
     </div>
     <!-- :style="{background: colors.userInput.bg}"-->
     <form
-      v-if="!(hideUserInputOnSuggestions && suggestions.length > 1)"
+      v-if="!(hideUserInputOnSuggestions && suggestions.length > 0)"
       class="sc-user-input"
       :class="{active: inputActive}"
     >
