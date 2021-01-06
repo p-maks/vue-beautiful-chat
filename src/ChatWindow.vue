@@ -47,7 +47,7 @@
       </template>
     </MessageList>
     <UserInput
-      v-if="!showUserList"
+      v-if="!showUserList || !hideUserInputOnSuggestions"
       :hide-user-input-on-suggestions="hideUserInputOnSuggestions"
       :show-emoji="showEmoji"
       :on-submit="onUserInputSubmit"
