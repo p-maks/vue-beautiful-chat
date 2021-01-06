@@ -10,10 +10,12 @@
       <div v-if="newMessagesCount > 0 && !isOpen" class="sc-new-messsages-count">
         {{ newMessagesCount }}
       </div>
+      <span>Get a Quote</span>
       <img v-if="isOpen" class="sc-closed-icon" :src="icons.close.img" :alt="icons.close.name" />
       <img v-else class="sc-open-icon" :src="icons.open.img" :alt="icons.open.name" />
     </div>
     <ChatWindow
+      :hide-user-input-on-suggestions="hideUserInputOnSuggestions"
       :message-list="messageList"
       :on-user-input-submit="onMessageWasSent"
       :participants="participants"
@@ -220,6 +222,10 @@ export default {
       type: Boolean,
       default: () => false
     },
+    hideUserInputOnSuggestions: {
+      type: Boolean,
+      default: () => false
+    },
     messageStyling: {
       type: Boolean,
       default: () => false
@@ -261,33 +267,44 @@ export default {
 
 <style scoped>
 .sc-launcher {
-  width: 60px;
-  height: 60px;
+  width: 155px;
+  height: 54px;
   background-position: center;
   background-repeat: no-repeat;
   position: fixed;
   right: 25px;
   bottom: 25px;
-  border-radius: 50%;
+  border-radius: 35px;
+  border: 1px solid rgba(179, 192, 200, 0.2);
   box-shadow: none;
   transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
+  -webkit-transition: width 0.35s;
+  transition: all 0.35s;
+}
+.sc-launcher span {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  position: fixed;
+  right: 73px;
+  bottom: 40px;
 }
 
 .sc-launcher:before {
   content: '';
   position: relative;
   display: block;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  border-radius: 35px;
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .sc-launcher .sc-open-icon,
 .sc-launcher .sc-closed-icon {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   position: fixed;
   right: 25px;
   bottom: 25px;
@@ -295,24 +312,30 @@ export default {
 }
 
 .sc-launcher .sc-open-icon {
-  width: 87px;
-  height: 87px;
+  width: 80px;
+  height: 80px;
   position: fixed;
-  right: 8px;
-  bottom: 12px;
+  right: 10px;
+  bottom: 13px;
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
 }
 
 .sc-launcher .sc-closed-icon {
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
 }
 
 .sc-launcher .sc-open-icon {
   padding: 20px;
   box-sizing: border-box;
   opacity: 1;
+}
+.sc-launcher.opened {
+  width: 54px;
+}
+.sc-launcher.opened span {
+  display: none;
 }
 
 .sc-launcher.opened .sc-open-icon {

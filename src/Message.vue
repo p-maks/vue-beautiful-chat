@@ -192,6 +192,7 @@ export default {
   font-size: 14px;
   line-height: 1.4;
   position: relative;
+  white-space: pre-wrap;
   -webkit-font-smoothing: subpixel-antialiased;
   .sc-message--text-body {
     .sc-message--text-content {

@@ -64,6 +64,7 @@ Vue.use(Chat)
       :colors="colors"
       :alwaysScrollToBottom="alwaysScrollToBottom"
       :disableUserListToggle="false"
+      :hideUserInputOnSuggestions="false"
       :messageStyling="messageStyling"
       @onType="handleOnType"
       @edit="editMessage" />
@@ -188,6 +189,7 @@ For more detailed examples see the demo folder.
 | disableUserListToggle | Boolean | A bool indicating whether or not to allow the user to toggle between message list and participants list
 | colors | Object | An object containing the specs of the colors used to paint the component. [See here](#faq)
 | messageStyling | Boolean | A bool indicating whether or not to enable `msgdown` support for message formatting in chat. [See here](#faq)
+| hideUserInputOnSuggestions | Boolean | A bool indicating whether or not to hide user input on suggestions.
 
 #### Events
 

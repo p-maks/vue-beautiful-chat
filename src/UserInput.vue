@@ -22,7 +22,11 @@
       /></span>
     </div>
     <!-- :style="{background: colors.userInput.bg}"-->
-    <form class="sc-user-input" :class="{active: inputActive}">
+    <form
+      v-if="!hideUserInputOnSuggestions || suggestions.length < 1"
+      class="sc-user-input"
+      :class="{active: inputActive}"
+    >
       <div
         ref="userInput"
         role="button"
@@ -137,6 +141,10 @@ export default {
     colors: {
       type: Object,
       required: true
+    },
+    hideUserInputOnSuggestions: {
+      type: Boolean,
+      default: () => false
     }
   },
   data() {
@@ -200,6 +208,7 @@ export default {
     },
     _submitSuggestion(suggestion) {
       this.onSubmit({author: 'me', type: 'text', data: {text: suggestion}})
+      this.focusUserInput()
     },
     _checkSubmitSuccess(success) {
       if (Promise !== undefined) {

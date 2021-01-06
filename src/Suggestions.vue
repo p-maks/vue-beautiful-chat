@@ -37,6 +37,7 @@ export default {
 .sc-suggestions-row {
   text-align: center;
   background: inherit;
+  margin-bottom: 10px;
 }
 
 .sc-suggestions-element {
