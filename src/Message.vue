@@ -184,7 +184,9 @@ export default {
     width: 80%;
   }
 }
-
+.sc-message--text-content {
+  white-space: pre-wrap;
+}
 .sc-message--text {
   padding: 5px 20px;
   border-radius: 6px;
@@ -192,7 +194,7 @@ export default {
   font-size: 14px;
   line-height: 1.4;
   position: relative;
-  white-space: pre-wrap;
+  //white-space: pre-wrap;
   -webkit-font-smoothing: subpixel-antialiased;
   .sc-message--text-body {
     .sc-message--text-content {
