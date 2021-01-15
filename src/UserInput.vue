@@ -22,11 +22,7 @@
       /></span>
     </div>
     <!-- :style="{background: colors.userInput.bg}"-->
-    <form
-      v-if="!hideUserInputOnSuggestions || suggestions.length < 1"
-      class="sc-user-input"
-      :class="{active: inputActive}"
-    >
+    <form v-if="isShowUserInput" class="sc-user-input" :class="{active: inputActive}">
       <div
         ref="userInput"
         role="button"
@@ -159,6 +155,9 @@ export default {
     },
     isEditing() {
       return store.state.editMessage && store.state.editMessage.id
+    },
+    isShowUserInput() {
+      return !(this.hideUserInputOnSuggestions && this.suggestions.length > 1)
     }
   },
   watch: {
