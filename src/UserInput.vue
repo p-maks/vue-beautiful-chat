@@ -157,7 +157,9 @@ export default {
       return store.state.editMessage && store.state.editMessage.id
     },
     isShowUserInput() {
-      return !(this.hideUserInputOnSuggestions && this.suggestions.length > 0)
+      let showInput = !(this.hideUserInputOnSuggestions && this.suggestions.length > 0)
+      console.log('isShowUserInput ' + showInput)
+      return showInput
     }
   },
   watch: {
