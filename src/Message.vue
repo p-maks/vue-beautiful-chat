@@ -370,7 +370,6 @@ export default {
 }
 
 /*Animation*/
-
 @-webkit-keyframes zoomIn {
   0% {
     -webkit-transform: scale(0);
