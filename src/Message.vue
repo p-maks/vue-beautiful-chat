@@ -132,7 +132,7 @@ export default {
 
 <style lang="scss">
 .sc-message {
-  width: 330px;
+  width: 340px;
   margin: auto;
   padding-bottom: 10px;
   display: flex;
@@ -165,11 +165,11 @@ export default {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
   align-self: center;
-  margin-right: 15px;
+  margin-right: 7px;
 }
 
 .sc-message--meta {
