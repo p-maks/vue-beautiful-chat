@@ -15,7 +15,7 @@
       <img v-else class="sc-open-icon" :src="icons.open.img" :alt="icons.open.name" />
     </div>
     <ChatWindow
-      :hide-user-input-on-suggestions="hideUserInputOnSuggestions"
+      :hide-user-input="hideUserInput"
       :message-list="messageList"
       :on-user-input-submit="onMessageWasSent"
       :participants="participants"
@@ -222,7 +222,7 @@ export default {
       type: Boolean,
       default: () => false
     },
-    hideUserInputOnSuggestions: {
+    hideUserInput: {
       type: Boolean,
       default: () => false
     },

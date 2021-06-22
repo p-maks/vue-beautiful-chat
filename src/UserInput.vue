@@ -22,7 +22,7 @@
       /></span>
     </div>
     <!-- :style="{background: colors.userInput.bg}"-->
-    <form v-if="isShowUserInput" class="sc-user-input" :class="{active: inputActive}">
+    <form v-show="isShowUserInput" class="sc-user-input" :class="{active: inputActive}">
       <div
         ref="userInput"
         role="button"
@@ -138,7 +138,7 @@ export default {
       type: Object,
       required: true
     },
-    hideUserInputOnSuggestions: {
+    hideUserInput: {
       type: Boolean,
       default: () => false
     }
@@ -157,7 +157,8 @@ export default {
       return store.state.editMessage && store.state.editMessage.id
     },
     isShowUserInput() {
-      return !(this.hideUserInputOnSuggestions && this.suggestions.length > 0)
+      this.focusUserInput()
+      return !this.hideUserInput
     }
   },
   watch: {

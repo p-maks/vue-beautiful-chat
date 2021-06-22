@@ -48,7 +48,7 @@
     </MessageList>
     <UserInput
       v-if="!showUserList"
-      :hide-user-input-on-suggestions="hideUserInputOnSuggestions"
+      :hide-user-input="hideUserInput"
       :show-emoji="showEmoji"
       :on-submit="onUserInputSubmit"
       :suggestions="getSuggestions()"
@@ -76,6 +76,10 @@ export default {
   },
   props: {
     showEmoji: {
+      type: Boolean,
+      default: false
+    },
+    hideUserInput: {
       type: Boolean,
       default: false
     },
@@ -134,10 +138,6 @@ export default {
     confirmationDeletionMessage: {
       type: String,
       required: true
-    },
-    hideUserInputOnSuggestions: {
-      type: Boolean,
-      default: () => false
     }
   },
   data() {
@@ -158,6 +158,11 @@ export default {
     },
     getSuggestions() {
       return this.messages.length > 0 ? this.messages[this.messages.length - 1].suggestions : []
+    },
+    showMe() {
+      console.log('shit changed ' + this.hideUserInput)
+      console.log('showEmoji ' + this.showEmoji)
+      return this.hideUserInput
     }
   }
 }
