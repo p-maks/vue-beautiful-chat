@@ -10,7 +10,7 @@
       <div v-if="newMessagesCount > 0 && !isOpen" class="sc-new-messsages-count">
         {{ newMessagesCount }}
       </div>
-      <span>Get a Quote</span>
+      <span>Request Meeting</span>
       <img v-if="isOpen" class="sc-closed-icon" :src="icons.close.img" :alt="icons.close.name" />
       <img v-else class="sc-open-icon" :src="icons.open.img" :alt="icons.open.name" />
     </div>
@@ -267,7 +267,7 @@ export default {
 
 <style scoped>
 .sc-launcher {
-  width: 155px;
+  width: 190px;
   height: 54px;
   background-position: center;
   background-repeat: no-repeat;
@@ -287,8 +287,8 @@ export default {
   font-size: 16px;
   font-weight: 600;
   position: fixed;
-  right: 73px;
-  bottom: 40px;
+  right: 70px;
+  bottom: 42px;
 }
 
 .sc-launcher:before {
