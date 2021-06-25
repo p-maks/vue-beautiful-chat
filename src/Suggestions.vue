@@ -37,12 +37,12 @@ export default {
 .sc-suggestions-row {
   text-align: center;
   background: inherit;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .sc-suggestions-element {
   margin: 3px;
-  padding: 5px 10px 5px 10px;
+  padding: 7px 10px 7px 10px;
   border: 1px solid;
   border-radius: 15px;
   font-size: 14px;
